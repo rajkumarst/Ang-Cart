@@ -1,0 +1,18 @@
+<h2>User Profile</h2>
+<table *ngFor="let user of userInfo.results">
+    <tr>
+        <th>Name</th>
+        <td class="align-left">{{user.name.last}}, {{user.name.first}}</td>
+        <td rowspan="3"><img src={{user.picture.thumbnail}} /></td>
+    </tr>
+    <tr>
+        <th>City</th>
+        <td>{{user.location.city}}</td>
+    </tr>
+    
+    <tr>
+        <th>Email</th>
+        <td>{{user.email}}</td>
+    </tr>
+</table>
+    
