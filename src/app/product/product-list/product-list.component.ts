@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { map } from 'rxjs';
 import { ProductService } from '../product.service';
 
 @Component({
@@ -11,9 +12,9 @@ export class ProductListComponent implements OnInit {
   constructor(private productService: ProductService){}
   products!: any;
 
-  // products$ = this.productService.getProducts().subscribe.pipe(
-  //   map(products => products)
-  // );
+  products$ = this.productService.getProducts().pipe(
+    map(data => data.drinks)
+  );
 
   ngOnInit(): void {
 

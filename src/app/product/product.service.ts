@@ -14,6 +14,6 @@ export class ProductService implements OnInit {
   }
 
   getProducts(){
-    return this.http.get(this.appConfig.drinksApiEndpoint);
+    return this.http.get<any>(this.appConfig.drinksApiEndpoint);
   }
 }

@@ -1,23 +1,23 @@
 <h2>Product Catalog</h2>
 
-<div *ngFor="let product of products.drinks">
-    
-    <mat-card class="matCard">
-        <div >
-        <mat-card-header>
-          <mat-card-title class="matCardTitle">{{product.strDrink}}</mat-card-title>
-          <mat-card-subtitle>{{product.strCategory}}</mat-card-subtitle>
-        </mat-card-header>
-        <img mat-card-image class="matCardImg" src={{product.strDrinkThumb}} alt="Photo Img">
-        <mat-card-content>
-          <p>
-            <strong>{{product.strAlcoholic}}</strong> Drink with main ingredient <strong>{{product.strIngredient1}}</strong>
-          </p>
-        </mat-card-content>
-        </div>
-        <mat-card-actions >
-            <button class="marCardAction" mat-button color="primary">BUY NOW</button>
-          </mat-card-actions>
-      </mat-card>
-      
+<!-- <div *ngFor="let product of products.drinks"> -->
+<div *ngFor="let product of products$ | async">
+  <mat-card class="matCard">
+    <div>
+      <mat-card-header>
+        <mat-card-title class="matCardTitle">{{product.strDrink}}</mat-card-title>
+        <mat-card-subtitle>{{product.strCategory}}</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image class="matCardImg" src={{product.strDrinkThumb}} alt="Photo Img">
+      <mat-card-content>
+        <p>
+          <strong>{{product.strAlcoholic}}</strong> Drink with main ingredient
+          <strong>{{product.strIngredient1}}</strong>
+        </p>
+      </mat-card-content>
+    </div>
+    <mat-card-actions>
+      <button class="marCardAction" mat-button color="primary">BUY NOW</button>
+    </mat-card-actions>
+  </mat-card>
 </div>
