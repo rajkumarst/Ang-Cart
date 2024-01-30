@@ -6,12 +6,9 @@ import { AppConfig, APPCONFIG_SERVICE_TOKEN } from '../service/app-config.servic
   providedIn: 'root'
 })
 export class ProductService implements OnInit {
-
   constructor(private http: HttpClient, @Inject(APPCONFIG_SERVICE_TOKEN) private appConfig: AppConfig) { }
 
-  ngOnInit() {
-    
-  }
+  ngOnInit() {}
 
   getProducts(){
     return this.http.get<any>(this.appConfig.drinksApiEndpoint);

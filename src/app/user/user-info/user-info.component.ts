@@ -11,16 +11,10 @@ export class UserInfoComponent implements OnInit {
   constructor(private userService: UserService){}
   userInfo!:any;
 
-  
-
   ngOnInit(){
     this.userService.getUserInfo().subscribe(userInfo => {
       console.log(userInfo);
       this.userInfo = userInfo;
     });
-
   }
-
-
-
 }

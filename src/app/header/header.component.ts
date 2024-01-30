@@ -8,7 +8,7 @@ import { UserInfoComponent } from '../user/user-info/user-info.component';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-  constructor(private dialog: MatDialog){}
+  constructor(private dialog: MatDialog) { }
 
   openDialog(event: any) {
     const targetLoc = event.currentTarget.getBoundingClientRect();
@@ -21,5 +21,4 @@ export class HeaderComponent {
     };
     const dialogRef = this.dialog.open(UserInfoComponent, dialogConfig);
   }
-
 }
